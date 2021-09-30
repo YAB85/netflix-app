@@ -1,0 +1,39 @@
+Html Webpack Plugin:
+<pre>
+  Error: html-webpack-plugin could not minify the generated output.
+  In production mode the html minifcation is enabled by default.
+  If you are not generating a valid html output please disable it manually.
+  You can do so by adding the following setting to your HtmlWebpackPlugin config:
+  |
+  |    minify: false
+  |
+  See https://github.com/jantimon/html-webpack-plugin#options for details.
+  For parser dedicated bugs please create an issue here:
+  https://danielruf.github.io/html-minifier-terser/
+  Parse Error: <
+    <script>!function(e){function t(t){for(var n,l,p=t[0],f=t[1],i=t[2],c=0,s=[];c<p.length;c++)l=p[c],Object.prototype.hasOw  nProperty.call(o,l)&&o[l]&&s.push(o[l][0]),o[l]=0;for(n in f)Object.prototype.hasOwnProperty.call(f,n)&&(e[n]=f[n]);for(a&&  a(t);s.length;)s.shift()();return u.push.apply(u,i||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,  p=1;p<r.length;p++){var f=r[p];0!==o[f]&&(n=!1)}n&&(u.splice(t--,1),e=l(l.s=r[0]))}return e}var n={},o={1:0},u=[];function   l(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,l),r.l=!0,r.export  s}l.m=e,l.c=n,l.d=function(e,t,r){l.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},l.r=function(e){"undefined"!=  =typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"_  _esModule",{value:!0})},l.t=function(e,t){if(1&t&&(e=l(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return   e;var r=Object.create(null);if(l.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)f  or(var n in e)l.d(r,n,function(t){return e[t]}.bind(null,n));return r},l.n=function(e){var t=e&&e.__esModule?function(){ret  urn e.default}:function(){return e};return l.d(t,"a",t),t},l.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,  t)},l.p="/";var p=this["webpackJsonpnetflix-app"]=this["webpackJsonpnetflix-app"]||[],f=p.push.bind(p);p.push=t,p=p.slice()  ;for(var i=0;i<p.length;i++)t(p[i]);var a=f;r()}([]);
+  //# sourceMappingURL=runtime-main.d2cc0064.js.map</script><script src="/static/js/2.d86d4657.chunk.js"></script><script src  ="/static/js/main.14d39895.chunk.js"></script></body>
+  </html>
+  
+  - htmlparser.js:244 new HTMLParser
+    [netflix-app]/[html-minifier-terser]/src/htmlparser.js:244:13
+  
+  - htmlminifier.js:993 minify
+    [netflix-app]/[html-minifier-terser]/src/htmlminifier.js:993:3
+  
+  - htmlminifier.js:1354 Object.exports.minify
+    [netflix-app]/[html-minifier-terser]/src/htmlminifier.js:1354:16
+  
+  - index.js:1013 HtmlWebpackPlugin.minifyHtml
+    [netflix-app]/[html-webpack-plugin]/index.js:1013:46
+  
+  - index.js:429 HtmlWebpackPlugin.postProcessHtml
+    [netflix-app]/[html-webpack-plugin]/index.js:429:40
+  
+  - index.js:254 
+    [netflix-app]/[html-webpack-plugin]/index.js:254:25
+  
+  - task_queues.js:95 processTicksAndRejections
+    internal/process/task_queues.js:95:5
+  
+</pre>
