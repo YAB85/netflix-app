@@ -1,0 +1,6 @@
+.container-boxes {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,17 @@
+.nomovies {
+  height: 20rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nomovies p {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}

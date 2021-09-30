@@ -1,0 +1,119 @@
+.wrapper {
+  height: inherit;
+  width: inherit;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 28rem;
+  height: 16rem;
+  margin: 2em;
+  border-radius: 0.15em;
+  box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.7);
+  position: relative;
+  color: #fff;
+  padding: 0em 3em 1.5em 3em;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  transition: all 0.4s ease-in;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card:hover  {
+  cursor: pointer;
+}
+
+.card:hover .card__content {
+  font-size: 1.06rem;
+}
+
+.card:hover .card__number {
+  opacity: 1;
+  transform: translateY(0em);
+}
+
+.card:hover:before {
+  left: 0em;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -42em;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(30, 80, 110, 0.006) 46%, rgba(39, 90, 161, 0.006) 100%);
+  z-index: 4;
+  transition: all 0.4s ease-in-out;
+}
+
+.card__overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(33, 33, 33, 0.0045);
+  z-index: 3;
+}
+
+.card__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 1rem;
+  margin-left: 165px;
+  z-index: 5;
+  transition: all 0.3s 0.2s ease-in-out;
+}
+
+.card__content span, .card__content button {
+  display: block;
+  font-weight: bold;
+}
+
+.card__title {
+  font-size: 1.6em;
+}
+
+.card__description {
+  font-size: 1em;
+  font-style: italic;
+  margin-bottom: 1em;
+  
+}
+
+.card__btn {
+  position: relative;
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+  padding: 0.53em 1.1em 0.53em 1.1em;
+  border: none;
+  background: linear-gradient(90deg, #ff3a3a 62%, #ff0707 100%);
+  color: #fff;
+}
+
+.card__btn:focus {
+  outline: none;
+}
+
+.card__number {
+  position: absolute;
+  top: -0.09em;
+  right: 0.154em;
+  font-size: 6.13em;
+  font-weight: bold;
+  z-index: 7;
+  opacity: 0;
+  transform: translateY(0.24em);
+  transition: all 0.4s ease-in-out;
+}

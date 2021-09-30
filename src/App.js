@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+
+import Layout from "./components/Layout/Layout";
+import UserProfile from "./components/Profile/UserProfile";
+import AuthPage from "./components/Pages/AuthPage";
+import HomePage from "./components/Pages/HomePage";
+import AuthContext from "./components/store/auth-context";
+import UserList from "./components/UserMovies/UserList";
+import FriendsPage from "./components/Pages/FriendsPage";
+
+import AllMovies from "./components/Pages/MyList";
 
 function App() {
+  const authCtx = useContext(AuthContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        {!authCtx.isLoggedIn && (
+          <Route path="/auth">
+            <AuthPage />
+          </Route>
+        )}
+
+        <Route path="/movies">
+          {authCtx.isLoggedIn && <AllMovies />}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+        </Route>
+        <Route path="/friends">
+          {authCtx.isLoggedIn && <FriendsPage />}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+        </Route>
+        <Route path="/mylist">
+          {authCtx.isLoggedIn && <UserList />}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+        </Route>
+
+        <Route path="/profile">
+          {authCtx.isLoggedIn && <UserProfile />}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+        </Route>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
